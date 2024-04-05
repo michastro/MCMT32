@@ -1,1 +1,0 @@
-copy "C:\Astro\ASCOM\MCMT32New\Win32\MCMT32\MCMT32_ASCOM.exe" "C:\Program Files (x86)\Common Files\ASCOM\Telescope\MCMT32_ASCOM.exe"

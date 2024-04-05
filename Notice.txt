@@ -1,6 +1,0 @@
-This driver have been tested under XP 32 bits and Seven 64 bits.
-It seems it works properly.
-If you have any problems or suggestions send me an email:
-michel.meunier100@orange.fr
-
-Regards
