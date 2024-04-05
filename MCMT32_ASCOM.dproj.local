@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/09/08 15:23:35.000.288,D:\Astro\ASCOM\MCMT32New\Console.pas=</Transaction>
+    <Transaction>2024/03/28 17:49:44.000.643,D:\Astro\ASCOM\MCMT32New\TrackingRatesCol_Unit.pas=D:\Astro\ASCOM\MCMT32New\TrackingRates_Unit.pas</Transaction>
+    <Transaction>2024/04/03 22:16:14.000.521,D:\Astro\ASCOM\MCMT32New\EnumeratorTrackingUnit.pas=D:\Astro\ASCOM\MCMT32New\RateEnumUnit.pas</Transaction>
+    <Transaction>2024/04/03 22:24:07.000.197,=D:\Astro\ASCOM\MCMT32New\RateEnumUnit.pas</Transaction>
+  </Transactions>
+</BorlandProject>

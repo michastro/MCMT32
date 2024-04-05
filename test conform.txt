@@ -1,0 +1,161 @@
+ 
+ConformanceCheck ASCOM Device Conformance Checker Version 6.1.0.52
+ConformanceCheck Running on ASCOM Platform 6.1 Build: Unknown
+ 
+ConformanceCheck Driver ProgID: MCMT32_ASCOM.Telescope
+ 
+Error handling 
+Error number for "Not Implemented" is: 80040400
+Error number for "Invalid Value 1" is: 80040401
+Error number for "Invalid Value 2" is: 80040405
+Error number for "Value Not Set 1" is: 80040402
+Error number for "Value Not Set 2" is: 80040403
+Error messages will not be interpreted to infer state.
+ 
+22:12:30.940 Driver Access Checks          OK       
+22:12:32.065 AccessChecks                  OK       Successfully created driver using late binding
+22:12:32.156 AccessChecks                  OK       Successfully connected using late binding
+22:12:32.162 AccessChecks                  INFO     The driver is a COM object
+22:12:33.331 AccessChecks                  INFO     Device does not expose interface ITelescopeV2
+22:12:34.480 AccessChecks                  INFO     Device does not expose interface ITelescopeV3
+22:12:36.240 AccessChecks                  OK       Successfully created driver using driver access toolkit
+22:12:36.314 AccessChecks                  OK       Successfully connected using driver access toolkit
+ 
+Conform is using ASCOM.DriverAccess.Telescope to get a Telescope object
+22:12:38.113 ConformanceCheck              OK       Driver instance created successfully
+22:12:38.192 ConformanceCheck              OK       Connected OK
+ 
+Common Driver Methods 
+22:12:38.225 InterfaceVersion              OK       3
+22:12:38.242 Connected                     OK       True
+22:12:38.257 Description                   OK       MCMT32: system based on UNO32 cards to managed microsteps motors of a telescope
+22:12:38.271 DriverInfo                    OK       Driver ASCOM for MCMT32 copyright M.Meunier
+22:12:38.283 DriverVersion                 OK       3.0
+22:12:38.297 Name                          OK       MCMT32
+22:12:38.308 CommandString                 INFO     Conform cannot test the CommandString method
+22:12:38.317 CommandBlind                  INFO     Conform cannot test the CommandBlind method
+22:12:38.328 CommandBool                   INFO     Conform cannot test the CommandBool method
+22:12:38.338 Action                        INFO     Conform cannot test the Action method
+22:12:38.395 SupportedActions              OK       AbortSlew
+22:12:38.405 SupportedActions              OK       AxisRates
+ 
+Can Properties 
+22:12:38.441 CanFindHome                   OK       False
+22:12:38.460 CanPark                       OK       True
+22:12:38.476 CanPulseGuide                 OK       True
+22:12:38.493 CanSetDeclinationRate         OK       True
+22:12:38.507 CanSetGuideRates              OK       False
+22:12:38.527 CanSetPark                    OK       True
+22:12:38.542 CanSetPierSide                OK       False
+22:12:38.559 CanSetRightAscensionRate      OK       True
+22:12:38.578 CanSetTracking                OK       False
+22:12:38.595 CanSlew                       OK       True
+22:12:38.610 CanSlewltAz                   OK       False
+22:12:38.628 CanSlewAltAzAsync             OK       False
+22:12:38.644 CanSlewAsync                  OK       True
+22:12:38.659 CanSync                       OK       True
+22:12:38.677 CanSyncAltAz                  OK       False
+22:12:38.695 CanUnPark                     OK       True
+ 
+Pre-run Checks 
+22:12:38.740 Mount Safety                  INFO     Scope is not parked, continuing testing
+22:12:38.755 TimeCheck                     INFO     PC Time Zone:  Paris, Madrid (heure d’été), offset -2 hours.
+22:12:38.767 TimeCheck                     INFO     PC UTCDate:    22-sept.-2015 20:12:38
+22:12:38.787 TimeCheck                     INFO     Mount UTCDate: 22-sept.-2015 20:12:38
+ 
+Properties 
+22:12:38.836 AlignmentMode                 OK       algPolar
+22:12:38.855 Altitude                      OK       0.00
+22:12:38.872 ApertureArea                  INFO     ApertureArea is 0.0
+22:12:38.893 ApertureDiameter              INFO     ApertureDiameter is 0.0
+22:12:38.912 AtHome                        OK       False
+22:12:38.935 AtPark                        OK       False
+22:12:38.954 Azimuth                       OK       0.00
+22:12:38.980 Declination                   OK       63:19:20
+22:12:39.001 DeclinationRate Read          OK       0.00
+22:12:39.023 DeclinationRate Write         OK       0.00
+22:12:39.042 DoesRefraction Read           OK       False
+22:12:39.061 DoesRefraction Write          OK       Can set DoesRefraction to True
+22:12:39.080 EquatorialSystem              OK       equLocalTopocentric
+22:12:39.102 FocalLength                   INFO     FocalLength is 0.0
+22:12:39.123 GuideRateDeclination Read     OK       0.00
+22:12:39.146 GuideRateDeclination Write    INFO     The following Issue can be changed to OK by setting "Interpret error messages" in Conform's setup dialogue
+22:12:39.161 GuideRateDeclination Write    ISSUE    COM - Exception: not implemented 80040401
+22:12:39.183 GuideRateRightAscension Read  OK       0.00
+22:12:39.207 GuideRateRightAscension Write OK       .NET - Feature not implemented
+22:12:39.230 IsPulseGuideing               OK       False
+22:12:39.258 RightAscension                OK       10:46:12
+22:12:39.278 RightAscensionRate Read       OK       0.00
+22:12:39.299 RightAscensionRate Write      OK       0.00
+22:12:39.323 SiteElevation Read            OK       0
+22:12:39.347 SiteElevation Write           OK       COM Invalid Value exception generated as expected on set site elevation < -300m
+22:12:39.369 SiteElevation Write           OK       COM Invalid Value exception generated as expected on set site elevation > 10,000m
+22:12:39.392 SiteElevation Write           OK       Legal value 0m written successfully
+22:12:39.414 SiteLatitude Read             OK       48:24:58
+22:12:39.436 SiteLatitude Write            OK       COM Invalid Value exception generated as expected on set site latitude < -90 degrees
+22:12:39.460 SiteLatitude Write            OK       COM Invalid Value exception generated as expected on set site latitude > 90 degrees
+22:12:39.482 SiteLatitude Write            OK       Legal value 48:24:58 degrees written successfully
+22:12:39.504 SiteLongitude Read            OK       02:34:21
+22:12:39.527 SiteLongitude Write           OK       COM Invalid Value exception generated as expected on set site longitude < -180 degrees
+22:12:39.549 SiteLongitude Write           OK       COM Invalid Value exception generated as expected on set site longitude > 180 degrees
+22:12:39.573 SiteLongitude Write           OK       Legal value 02:34:21 degrees written successfully
+22:12:39.602 Slewing                       OK       False
+22:12:39.624 SlewSettleTime Read           OK       0
+22:12:39.647 SlewSettleTime Write          OK       COM Invalid Value exception generated as expected on set slew settle time < 0
+22:12:39.668 SlewSettleTime Write          OK       Legal value 0 seconds written successfully
+22:12:39.693 SideOfPier Read               OK       pierEast
+22:12:39.719 SiderealTime                  OK       20:28:26
+22:12:39.738 SiderealTime                  OK       Scope and ASCOM sideral times agree to better than 1 second, Scope: 20:28:26, ASCOM: 20:28:26
+22:12:39.762 TargetDeclination Read        INFO     The following Issue can be changed to OK by setting "Interpret error messages" in Conform's setup dialogue
+22:12:39.779 TargetDeclination Read        ISSUE    COM - Exception: not implemented 80040401
+22:12:39.807 TargetDeclination Write       OK       COM Invalid Value exception generated as expected on set TargetDeclination < -90 degrees
+22:12:39.829 TargetDeclination Write       OK       COM Invalid Value exception generated as expected on set TargetDeclination > 90 degrees
+22:12:39.868 TargetDeclination Write       OK       Legal value 01:00:00" DD:MM:SS written successfully
+22:12:39.894 TargetRightAscension Read     INFO     The following Issue can be changed to OK by setting "Interpret error messages" in Conform's setup dialogue
+22:12:39.911 TargetRightAscension Read     ISSUE    COM - Exception: not implemented 80040401
+22:12:39.937 TargetRightAscension Write    OK       COM Invalid Value exception generated as expected on set TargetRightAscension < 0 hours
+22:12:39.961 TargetRightAscension Write    OK       COM Invalid Value exception generated as expected on set TargetRightAscension > 24 hours
+22:12:40.018 TargetRightAscension Write    OK       Legal value 16:28:26 HH:MM:SS written successfully
+22:12:40.046 Tracking Read                 OK       True
+22:12:40.071 Tracking Write                INFO     The following Issue can be changed to OK by setting "Interpret error messages" in Conform's setup dialogue
+22:12:40.088 Tracking Write                ISSUE    COM - Exception: not implemented 80040401
+22:12:40.184 TrackingRates                          Found drive rate: 16
+22:12:40.223 TrackingRates                          Found drive rate: 16
+22:12:40.248 TrackingRates                          Found drive rate: 16
+22:12:40.273 TrackingRates                          Found drive rate: 16
+22:12:40.293 TrackingRates                 OK       Drive rates read OK
+22:12:40.316 TrackingRate Read             OK       driveSidereal
+22:12:40.349 UTCDate Read                  OK       22/09/2015 20:12:40
+22:12:40.376 UTCDate Write                 OK       New UTCDate written successfully: 22/09/2015 20:12:40
+ 
+Methods 
+22:12:40.447 CanMoveAxis:Primary           OK       CanMoveAxis:Primary True
+22:12:40.474 CanMoveAxis:Secondary         OK       CanMoveAxis:Secondary True
+22:12:40.503 CanMoveAxis:Tertiary          OK       CanMoveAxis:Tertiary False
+22:12:40.769 Park                          OK       Success
+22:12:40.802 Park                          OK       Success if already parked
+22:12:40.842 Park:AbortSlew                OK       AbortSlew did raise an exception when Parked as required
+22:12:40.900 Park:MoveAxis Primary         OK       MoveAxis Primary did raise an exception when Parked as required
+22:12:40.954 Park:MoveAxis Secondary       OK       MoveAxis Secondary did raise an exception when Parked as required
+22:12:41.005 Park:PulseGuide               OK       PulseGuide did raise an exception when Parked as required
+22:12:41.067 Park:SlewToCoordinates        OK       SlewToCoordinates did raise an exception when Parked as required
+22:12:41.129 Park:SlewToCoordinatesAsync   OK       SlewToCoordinatesAsync did raise an exception when Parked as required
+22:12:41.209 Park:SlewToTarget             OK       SlewToTarget did raise an exception when Parked as required
+22:12:41.290 Park:SlewToTargetAsync        OK       SlewToTargetAsync did raise an exception when Parked as required
+22:12:41.351 Park:SyncToCoordinates        OK       SyncToCoordinates did raise an exception when Parked as required
+22:12:41.435 Park:SyncToTarget             OK       SyncToTarget did raise an exception when Parked as required
+22:12:41.696 UnPark                        OK       Success
+22:12:41.723 UnPark                        OK       Success if already unparked
+22:12:41.762 AbortSlew                     OK       AbortSlew Ok when not slewing
+22:12:41.867 AxisRate:Primary              OK       Axis rate minimum: 0.00522274084425675 Axis rate maximum: 0.00522274084425675
+22:12:41.894 AxisRate:Primary              OK       Axis rate minimum: 0.10000088889679 Axis rate maximum: 0.10000088889679
+22:12:41.922 AxisRate:Primary              OK       Axis rate minimum: 2.96052631578947 Axis rate maximum: 2.96052631578947
+22:12:41.947 AxisRate:Primary              OK       No overlapping axis rates found
+22:12:41.966 AxisRate:Primary              OK       No duplcate axis rates found
+22:12:42.050 AxisRate:Secondary            OK       Axis rate minimum: 0.00154576494754704 Axis rate maximum: 0.00154576494754704
+22:12:42.078 AxisRate:Secondary            OK       Axis rate minimum: 0.10000088889679 Axis rate maximum: 0.10000088889679
+22:12:42.107 AxisRate:Secondary            OK       Axis rate minimum: 2.96052631578947 Axis rate maximum: 2.96052631578947
+22:12:42.131 AxisRate:Secondary            OK       No overlapping axis rates found
+22:12:42.150 AxisRate:Secondary            OK       No duplcate axis rates found
+22:12:42.214 AxisRate:Tertiary             OK       Empty axis rate returned
+22:12:42.242 FindHome                      OK       CanFindHome is false and COM Invalid Value exception generated

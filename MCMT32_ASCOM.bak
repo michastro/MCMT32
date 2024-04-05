@@ -1,0 +1,155 @@
+// ************************************************************************ //
+// AVERTISSEMENT
+// -------
+// Ce fichier est généré par l'importateur ou l'éditeur de bibliothèques de types.
+// Sauf les erreurs de syntaxe, l'éditeur analysera les modifications apportées au fichier.
+// Toutefois, lors de l'application de changements via l'éditeur, ce fichier sera régénéré
+// et les commentaires et les changements de formatage seront perdus.
+// ************************************************************************ //
+// Fichier généré le 11/04/2013 16:28:37 (- $Rev: 12980 $, 11118690).
+
+[
+  uuid(A5F49B3F-C4AC-4BBE-9415-837223494182),
+  version(1.0)
+
+]
+library MCMT32_ASCOM
+{
+
+  importlib("stdole2.tlb");
+
+  interface ITelescope;
+  coclass Telescope;
+  interface IRate;
+  coclass Rate;
+  interface IRates;
+  coclass Rates;
+  interface ITrackingRatesCol;
+  coclass TrackingRatesCol;
+
+
+  [
+    uuid(CC737DCB-A654-43B6-B008-0E0818811FEF)
+  ]
+  enum TelescopeAxes
+  {
+    TelescopeAxes_DUMMY = 0
+  };
+
+  [
+    uuid(3852A724-A6A5-4706-8767-A0C374917D2C)
+  ]
+  enum GuideDirections
+  {
+    GuideDirections_DUMMY = 0
+  };
+
+  [
+    uuid(FC365CE7-B67F-46CD-80A4-7A1E8EAAB51B)
+  ]
+  enum AlignmentModes
+  {
+    AlignmentModes_DUMMY = 0
+  };
+
+  [
+    uuid(12EBBDED-4055-49A4-AECC-D7F46C4046C7)
+  ]
+  enum EquatorialCoordinateType
+  {
+    EquatorialCoordinateType_DUMMY = 0
+  };
+
+  [
+    uuid(195B5F45-504C-4FF4-A174-467E3CCC9455)
+  ]
+  enum PierSide
+  {
+    PierSide_DUMMY = 0
+  };
+
+  [
+    uuid(37CE341D-7A6B-45C2-831A-01CE391D3E82)
+  ]
+  enum DriveRates
+  {
+    DriveRates_DUMMY = 0
+  };
+
+  [
+    uuid(1DBD9AC9-BF28-4F0E-8196-ACA18339536B),
+    helpstring("Interface dispatch pour Telescope Objet"),
+    dual,
+    oleautomation
+  ]
+  interface ITelescope: IDispatch
+  {
+  };
+
+  [
+    uuid(60B5A5D1-5BA9-4D28-BBF9-DD5BE2B83ED2),
+    helpstring("Interface dispatch pour Rate Objet"),
+    dual,
+    oleautomation
+  ]
+  interface IRate: IDispatch
+  {
+  };
+
+  [
+    uuid(1339E0E3-6FF7-4352-B6C4-1AEC52361915),
+    helpstring("Interface dispatch pour Rates Objet"),
+    dual,
+    oleautomation
+  ]
+  interface IRates: IDispatch
+  {
+  };
+
+  [
+    uuid(F116E1DA-7E3E-4207-BD17-1615DCE4BE41),
+    helpstring("Interface dispatch pour TrackingRatesCol Objet"),
+    dual,
+    oleautomation
+  ]
+  interface ITrackingRatesCol: IDispatch
+  {
+  };
+
+  [
+    uuid(210FA956-1844-4C7B-AC40-E22DC5A48A4F),
+    helpstring("Telescope Objet")
+  ]
+  coclass Telescope
+  {
+    [default] interface ITelescope;
+  };
+
+  [
+    uuid(3BF32CFF-32FC-461A-A252-3F59267E015D),
+    helpstring("Rate Objet")
+  ]
+  coclass Rate
+  {
+    [default] interface IRate;
+  };
+
+  [
+    uuid(5F055F3E-7AC8-4CDC-81ED-BB142C6D59AB),
+    helpstring("Rates Objet")
+  ]
+  coclass Rates
+  {
+    [default] interface IRates;
+  };
+
+  [
+    uuid(A2A1356E-B3D2-4434-9118-01A7EB105FD0),
+    helpstring("TrackingRatesCol Objet")
+  ]
+  coclass TrackingRatesCol
+  {
+    [default] interface ITrackingRatesCol;
+  };
+
+};
