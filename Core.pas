@@ -5774,11 +5774,14 @@ begin
       with DeviceIni do
       begin
         AutoFindCOM:= SetupTelescope.CheckBoxAutoCOM.Checked;
+        try
         if AutoFindCOM then
           NumCom     := StrToInt(SetupTelescope.ComboBoxNumCOM.text)
         else
           NumCom     := StrToInt(SetupTelescope.NbreEditPortSerieForced.text);
-
+        except
+          NumCom:=1;
+        end;
         // Configuration ******************************************************
         Reg.WriteBool('MCMT2021', SetupTelescope.CheckBoxMCMT2021.Checked);
         WriteInteger('Configuration', 'Port', NumCOM);

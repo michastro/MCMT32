@@ -6,7 +6,7 @@
 // Toutefois, lors de l'application de changements via l'éditeur, ce fichier sera régénéré
 // et les commentaires et les changements de formatage seront perdus.
 // ************************************************************************ //
-// Fichier généré le 04/04/2024 16:45:08 (- $Rev: 12980 $, 66948984).
+// Fichier généré le 06/04/2024 02:03:27 (- $Rev: 12980 $, 19134078).
 
 [
   uuid(A5F49B3F-C4AC-4BBE-9415-837223494182),
@@ -222,7 +222,7 @@ library MCMT32_ASCOM
     [propput, id(0x0000003A)]
     HRESULT _stdcall GuideRateRightAscension([in] double Value);
     [propget, id(0x0000003B)]
-    HRESULT _stdcall InterfaceVersion([out, retval] long* Value);
+    HRESULT _stdcall InterfaceVersion([out, retval] short* Value);
     [propget, id(0x0000003C)]
     HRESULT _stdcall IsPulseGuiding([out, retval] VARIANT_BOOL* Value);
     [propget, id(0x0000003D)]

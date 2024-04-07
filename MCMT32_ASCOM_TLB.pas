@@ -12,10 +12,10 @@ unit MCMT32_ASCOM_TLB;
 // ************************************************************************ //
 
 // $Rev: 98336 $
-// Fichier généré le 04/04/2024 16:45:06 depuis la bibliothèque de types ci-dessous.
+// Fichier généré le 06/04/2024 02:03:19 depuis la bibliothèque de types ci-dessous.
 
 // ************************************************************************  //
-// Biblio. types : D:\Astro\ASCOM\MCMT32New\MCMT32_ASCOM (1)
+// Biblio. types : D:\Astro\ASCOM\MCMT32\MCMT32_ASCOM (1)
 // LIBID : {A5F49B3F-C4AC-4BBE-9415-837223494182}
 // LCID : 0
 // Fichier d'aide :
@@ -208,7 +208,7 @@ type
     procedure Set_GuideRateDeclination(Value: Double); safecall;
     function Get_GuideRateRightAscension: Double; safecall;
     procedure Set_GuideRateRightAscension(Value: Double); safecall;
-    function Get_InterfaceVersion: Integer; safecall;
+    function Get_InterfaceVersion: Smallint; safecall;
     function Get_IsPulseGuiding: WordBool; safecall;
     function Get_Name: WideString; safecall;
     function Get_RightAscension: Double; safecall;
@@ -279,7 +279,7 @@ type
     property FocalLength: Double read Get_FocalLength;
     property GuideRateDeclination: Double read Get_GuideRateDeclination write Set_GuideRateDeclination;
     property GuideRateRightAscension: Double read Get_GuideRateRightAscension write Set_GuideRateRightAscension;
-    property InterfaceVersion: Integer read Get_InterfaceVersion;
+    property InterfaceVersion: Smallint read Get_InterfaceVersion;
     property IsPulseGuiding: WordBool read Get_IsPulseGuiding;
     property Name: WideString read Get_Name;
     property RightAscension: Double read Get_RightAscension;
@@ -369,7 +369,7 @@ type
     property FocalLength: Double readonly dispid 56;
     property GuideRateDeclination: Double dispid 57;
     property GuideRateRightAscension: Double dispid 58;
-    property InterfaceVersion: Integer readonly dispid 59;
+    property InterfaceVersion: Smallint readonly dispid 59;
     property IsPulseGuiding: WordBool readonly dispid 60;
     property Name: WideString readonly dispid 61;
     property RightAscension: Double readonly dispid 62;

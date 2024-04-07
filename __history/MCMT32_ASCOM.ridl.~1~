@@ -1,0 +1,405 @@
+// ************************************************************************ //
+// AVERTISSEMENT
+// -------
+// Ce fichier est généré par l'importateur ou l'éditeur de bibliothèques de types.
+// Sauf les erreurs de syntaxe, l'éditeur analysera les modifications apportées au fichier.
+// Toutefois, lors de l'application de changements via l'éditeur, ce fichier sera régénéré
+// et les commentaires et les changements de formatage seront perdus.
+// ************************************************************************ //
+// Fichier généré le 04/04/2024 16:45:08 (- $Rev: 12980 $, 66948984).
+
+[
+  uuid(A5F49B3F-C4AC-4BBE-9415-837223494182),
+  version(1.0)
+
+]
+library MCMT32_ASCOM
+{
+
+  importlib("stdole2.tlb");
+  importlib("mscorlib.tlb");
+
+  interface ITelescope;
+  coclass Telescope;
+  interface IRate;
+  coclass Rate;
+  interface IAxisRates;
+  coclass AxisRates;
+  interface ITrackingRates;
+  coclass TrackingRates;
+  coclass RateEnum;
+  coclass EnumeratorTracking;
+
+
+  [
+    uuid(CC737DCB-A654-43B6-B008-0E0818811FEF)
+  ]
+  enum TelescopeAxes
+  {
+    axisPrimary = 0,
+    axisSecondary = 1,
+    axisTertiary = 2
+  };
+
+  [
+    uuid(3852A724-A6A5-4706-8767-A0C374917D2C)
+  ]
+  enum GuideDirections
+  {
+    guideNorth = 0,
+    guideSouth = 1,
+    guideEast = 2,
+    guideWest = 3
+  };
+
+  [
+    uuid(FC365CE7-B67F-46CD-80A4-7A1E8EAAB51B)
+  ]
+  enum AlignmentModes
+  {
+    algAltAz = 0,
+    algPolar = 1,
+    algGermanPolar = 2
+  };
+
+  [
+    uuid(12EBBDED-4055-49A4-AECC-D7F46C4046C7)
+  ]
+  enum EquatorialCoordinateType
+  {
+    equOther = 0,
+    equLocalTopocentric = 1,
+    equJ2000 = 2,
+    equJ2050 = 3,
+    equB1950 = 4
+  };
+
+  [
+    uuid(195B5F45-504C-4FF4-A174-467E3CCC9455)
+  ]
+  enum PierSide
+  {
+    pierEast = 0,
+    pierWest = 1,
+    pierUnknown = -1
+  };
+
+  [
+    uuid(37CE341D-7A6B-45C2-831A-01CE391D3E82)
+  ]
+  enum DriveRates
+  {
+    driveSidereal = 0,
+    driveLunar = 1,
+    driveSolar = 2,
+    driveKing = 3
+  };
+
+  [
+    uuid(1DBD9AC9-BF28-4F0E-8196-ACA18339536B),
+    helpstring("Interface dispatch pour Telescope Objet"),
+    dual,
+    oleautomation
+  ]
+  interface ITelescope: IDispatch
+  {
+    [id(0x00000001)]
+    HRESULT _stdcall AbortSlew(void);
+    [id(0x00000002)]
+    HRESULT _stdcall AxisRates([in] enum TelescopeAxes Axis, [out, retval] IAxisRates** Value);
+    [id(0x00000003)]
+    HRESULT _stdcall CanMoveAxis([in] enum TelescopeAxes Axe, [out, retval] VARIANT_BOOL* Value);
+    [id(0x00000004)]
+    HRESULT _stdcall CommandBlind(void);
+    [id(0x00000005)]
+    HRESULT _stdcall CommandBool(void);
+    [id(0x00000006)]
+    HRESULT _stdcall CommandString(void);
+    [id(0x00000008)]
+    HRESULT _stdcall FindHome(void);
+    [id(0x00000009)]
+    HRESULT _stdcall MoveAxis([in] enum TelescopeAxes Axe, [in] double Rate);
+    [id(0x0000000A)]
+    HRESULT _stdcall Park(void);
+    [id(0x0000000B)]
+    HRESULT _stdcall PulseGuide([in] enum GuideDirections Direction, [in] long Duration);
+    [id(0x0000000C)]
+    HRESULT _stdcall SetPark(void);
+    [id(0x0000000D)]
+    HRESULT _stdcall SetupDialog(void);
+    [id(0x0000000E)]
+    HRESULT _stdcall SlewToAltAz(void);
+    [id(0x0000000F)]
+    HRESULT _stdcall SlewToAltAzAsync(void);
+    [id(0x00000010)]
+    HRESULT _stdcall SlewToCoordinates([in] double RightAscension, [in] double Declination);
+    [id(0x00000011)]
+    HRESULT _stdcall SlewToCoordinatesAsync([in] double RightAscension, [in] double Declination);
+    [id(0x00000012)]
+    HRESULT _stdcall SlewToTarget(void);
+    [id(0x00000013)]
+    HRESULT _stdcall SlewToTargetAsync(void);
+    [id(0x00000014)]
+    HRESULT _stdcall SyncToAltAz(void);
+    [id(0x00000015)]
+    HRESULT _stdcall SyncToCoordinates([in] double RightAscension, [in] double Declination);
+    [id(0x00000016)]
+    HRESULT _stdcall SyncToTarget(void);
+    [id(0x00000017)]
+    HRESULT _stdcall Unpark(void);
+    [propget, id(0x00000018)]
+    HRESULT _stdcall AlignmentMode([out, retval] enum AlignmentModes* Value);
+    [propget, id(0x00000019)]
+    HRESULT _stdcall Altitude([out, retval] double* Value);
+    [propget, id(0x0000001A)]
+    HRESULT _stdcall ApertureArea([out, retval] double* Value);
+    [propget, id(0x0000001B)]
+    HRESULT _stdcall ApertureDiameter([out, retval] double* Value);
+    [propget, id(0x0000001C)]
+    HRESULT _stdcall AtHome([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000001D)]
+    HRESULT _stdcall AtPark([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000001E)]
+    HRESULT _stdcall Azimuth([out, retval] double* Value);
+    [propget, id(0x0000001F)]
+    HRESULT _stdcall CanFindHome([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000020)]
+    HRESULT _stdcall CanPark([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000021)]
+    HRESULT _stdcall CanPulseGuide([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000022)]
+    HRESULT _stdcall CanSetDeclinationRate([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000023)]
+    HRESULT _stdcall CanSetGuideRates([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000024)]
+    HRESULT _stdcall CanSetPark([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000025)]
+    HRESULT _stdcall CanSetPierSide([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000026)]
+    HRESULT _stdcall CanSetRightAscensionRate([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000027)]
+    HRESULT _stdcall CanSetTracking([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000028)]
+    HRESULT _stdcall CanSlew([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000029)]
+    HRESULT _stdcall CanSlewAltAz([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000002A)]
+    HRESULT _stdcall CanSlewAltAzAsync([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000002B)]
+    HRESULT _stdcall CanSlewAsync([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000002C)]
+    HRESULT _stdcall CanSync([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000002D)]
+    HRESULT _stdcall CanSyncAltAz([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000002E)]
+    HRESULT _stdcall CanUnpark([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000030)]
+    HRESULT _stdcall Declination([out, retval] double* Value);
+    [propget, id(0x00000032)]
+    HRESULT _stdcall DeclinationRate([out, retval] double* Value);
+    [propput, id(0x00000032)]
+    HRESULT _stdcall DeclinationRate([in] double Value);
+    [propget, id(0x00000033)]
+    HRESULT _stdcall Description([out, retval] BSTR* Value);
+    [propget, id(0x00000034)]
+    HRESULT _stdcall DoesRefraction([out, retval] VARIANT_BOOL* Value);
+    [propput, id(0x00000034)]
+    HRESULT _stdcall DoesRefraction([in] VARIANT_BOOL Value);
+    [propget, id(0x00000035)]
+    HRESULT _stdcall DriverInfo([out, retval] BSTR* Value);
+    [propget, id(0x00000036)]
+    HRESULT _stdcall DriverVersion([out, retval] BSTR* Value);
+    [propget, id(0x00000037)]
+    HRESULT _stdcall EquatorialSystem([out, retval] enum EquatorialCoordinateType* Value);
+    [propget, id(0x00000038)]
+    HRESULT _stdcall FocalLength([out, retval] double* Value);
+    [propget, id(0x00000039)]
+    HRESULT _stdcall GuideRateDeclination([out, retval] double* Value);
+    [propput, id(0x00000039)]
+    HRESULT _stdcall GuideRateDeclination([in] double Value);
+    [propget, id(0x0000003A)]
+    HRESULT _stdcall GuideRateRightAscension([out, retval] double* Value);
+    [propput, id(0x0000003A)]
+    HRESULT _stdcall GuideRateRightAscension([in] double Value);
+    [propget, id(0x0000003B)]
+    HRESULT _stdcall InterfaceVersion([out, retval] long* Value);
+    [propget, id(0x0000003C)]
+    HRESULT _stdcall IsPulseGuiding([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x0000003D)]
+    HRESULT _stdcall Name([out, retval] BSTR* Value);
+    [propget, id(0x0000003E)]
+    HRESULT _stdcall RightAscension([out, retval] double* Value);
+    [propget, id(0x0000003F)]
+    HRESULT _stdcall RightAscensionRate([out, retval] double* Value);
+    [propput, id(0x0000003F)]
+    HRESULT _stdcall RightAscensionRate([in] double Value);
+    [propget, id(0x00000040)]
+    HRESULT _stdcall SideOfPier([out, retval] long* Value);
+    [propput, id(0x00000040)]
+    HRESULT _stdcall SideOfPier([in] long Value);
+    [propget, id(0x00000041)]
+    HRESULT _stdcall SiderealTime([out, retval] double* Value);
+    [propget, id(0x00000042)]
+    HRESULT _stdcall SiteElevation([out, retval] double* Value);
+    [propput, id(0x00000042)]
+    HRESULT _stdcall SiteElevation([in] double Value);
+    [propget, id(0x00000043)]
+    HRESULT _stdcall SiteLatitude([out, retval] double* Value);
+    [propput, id(0x00000043)]
+    HRESULT _stdcall SiteLatitude([in] double Value);
+    [propget, id(0x00000044)]
+    HRESULT _stdcall SiteLongitude([out, retval] double* Value);
+    [propput, id(0x00000044)]
+    HRESULT _stdcall SiteLongitude([in] double Value);
+    [propget, id(0x00000045)]
+    HRESULT _stdcall Slewing([out, retval] VARIANT_BOOL* Value);
+    [propget, id(0x00000046)]
+    HRESULT _stdcall SlewSettleTime([out, retval] long* Value);
+    [propput, id(0x00000046)]
+    HRESULT _stdcall SlewSettleTime([in] long Value);
+    [propget, id(0x00000047)]
+    HRESULT _stdcall TargetDeclination([out, retval] double* Value);
+    [propput, id(0x00000047)]
+    HRESULT _stdcall TargetDeclination([in] double Value);
+    [propget, id(0x00000048)]
+    HRESULT _stdcall TargetRightAscension([out, retval] double* Value);
+    [propput, id(0x00000048)]
+    HRESULT _stdcall TargetRightAscension([in] double Value);
+    [propget, id(0x00000049)]
+    HRESULT _stdcall Tracking([out, retval] VARIANT_BOOL* Value);
+    [propput, id(0x00000049)]
+    HRESULT _stdcall Tracking([in] VARIANT_BOOL Value);
+    [propget, id(0x0000004A)]
+    HRESULT _stdcall TrackingRate([out, retval] long* Value);
+    [propput, id(0x0000004A)]
+    HRESULT _stdcall TrackingRate([in] long Value);
+    [propget, id(0x0000004B)]
+    HRESULT _stdcall TrackingRates([out, retval] ITrackingRates** Value);
+    [propget, id(0x0000004C)]
+    HRESULT _stdcall UTCDate([out, retval] DATE* Value);
+    [propput, id(0x0000004C)]
+    HRESULT _stdcall UTCDate([in] DATE Value);
+    [propget, id(0x0000004D)]
+    HRESULT _stdcall Connected([out, retval] VARIANT_BOOL* Value);
+    [propput, id(0x0000004D)]
+    HRESULT _stdcall Connected([in] VARIANT_BOOL Value);
+    [propget, id(0x0000004E)]
+    HRESULT _stdcall SupportedActions([out, retval] VARIANT* Value);
+    [propget, id(0x0000004F)]
+    HRESULT _stdcall PECCodeur([out, retval] long* Value);
+    [propget, id(0x00000050)]
+    HRESULT _stdcall RawPositionAlphaInit_arcsecCodeurs([out, retval] double* Value);
+    [propget, id(0x00000051)]
+    HRESULT _stdcall RawPositionDeltaInit_arcsecCodeurs([out, retval] double* Value);
+    [propget, id(0x00000052)]
+    HRESULT _stdcall RawPositionAlpha_arcsecCodeurs([out, retval] double* Value);
+    [propget, id(0x00000053)]
+    HRESULT _stdcall RawPositionDelta_arcsecCodeurs([out, retval] double* Value);
+    [propget, id(0x00000054)]
+    HRESULT _stdcall DestinationSideOfPier([in] double RightAscension, [in] double Declination, [out, retval] enum PierSide* Value);
+  };
+
+  [
+    uuid(60B5A5D1-5BA9-4D28-BBF9-DD5BE2B83ED2),
+    helpstring("Interface dispatch pour Rate Objet"),
+    dual,
+    oleautomation
+  ]
+  interface IRate: IDispatch
+  {
+    [propget, id(0x00000001)]
+    HRESULT _stdcall Minimum([out, retval] double* Value);
+    [propput, id(0x00000001)]
+    HRESULT _stdcall Minimum([in] double Value);
+    [propget, id(0x00000002)]
+    HRESULT _stdcall Maximum([out, retval] double* Value);
+    [propput, id(0x00000002)]
+    HRESULT _stdcall Maximum([in] double Value);
+  };
+
+  [
+    uuid(1339E0E3-6FF7-4352-B6C4-1AEC52361915),
+    helpstring("Interface dispatch pour Rates Objet"),
+    dual,
+    oleautomation
+  ]
+  interface IAxisRates: IEnumVARIANT
+  {
+    [propget, id(0xFFFFFFFC)]
+    HRESULT _stdcall _NewEnum([out, retval] IAxisRates** Value);
+    [propget, id(0x00000001)]
+    HRESULT _stdcall Count([out, retval] long* Value);
+    [propget, id(0x00000000), defaultcollelem]
+    HRESULT _stdcall Item([in] long Index, [out, retval] IRate** Value);
+    [id(0x00000067)]
+    HRESULT _stdcall GetEnumerator([out, retval]  IDispatch** Value);
+  };
+
+  [
+    uuid(F116E1DA-7E3E-4207-BD17-1615DCE4BE41),
+    helpstring("Interface dispatch pour TrackingRatesCol Objet"),
+    dual,
+    oleautomation
+  ]
+  interface ITrackingRates: IDispatch
+  {
+    [propget, id(0x00000001)]
+    HRESULT _stdcall Count([out, retval] long* Value);
+    [id(0x000000C9)]
+    HRESULT _stdcall GetEnumerator([out, retval] IEnumerator** Value);
+  };
+
+  [
+    uuid(210FA956-1844-4C7B-AC40-E22DC5A48A4F),
+    helpstring("Telescope Objet")
+  ]
+  coclass Telescope
+  {
+    [default] interface ITelescope;
+  };
+
+  [
+    uuid(3BF32CFF-32FC-461A-A252-3F59267E015D),
+    helpstring("Rate Objet")
+  ]
+  coclass Rate
+  {
+    [default] interface IRate;
+  };
+
+  [
+    uuid(5F055F3E-7AC8-4CDC-81ED-BB142C6D59AB),
+    helpstring("Rates Objet")
+  ]
+  coclass AxisRates
+  {
+    [default] interface IAxisRates;
+  };
+
+  [
+    uuid(A2A1356E-B3D2-4434-9118-01A7EB105FD0),
+    helpstring("TrackingRatesCol Objet")
+  ]
+  coclass TrackingRates
+  {
+    [default] interface ITrackingRates;
+  };
+
+  [
+    uuid(F700B60F-2811-40D3-A7D7-068040DE0ED4),
+    helpstring("RateEnum")
+  ]
+  coclass RateEnum
+  {
+    [default] interface IEnumerator;
+  };
+
+  [
+    uuid(AC27A26E-2973-4356-A28D-F8CF4CA61B7E)
+  ]
+  coclass EnumeratorTracking
+  {
+    [default] interface IEnumerator;
+  };
+
+};

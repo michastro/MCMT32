@@ -51,7 +51,7 @@ type
     function Get_FocalLength: Double; safecall;
     function Get_GuideRateDeclination: Double; safecall;
     function Get_GuideRateRightAscension: Double; safecall;
-    function Get_InterfaceVersion: Integer; safecall;
+    function Get_InterfaceVersion: Smallint; safecall;
     function Get_IsPulseGuiding: WordBool; safecall;
     function Get_Name: WideString; safecall;
     function Get_RightAscension: Double; safecall;
@@ -627,7 +627,7 @@ begin
   LogEndProc(procName);
 end;
 
-function TTelescope.Get_InterfaceVersion: Integer;
+function TTelescope.Get_InterfaceVersion: Smallint;
 Const
   procName='Get_InterfaceVersion';
 begin

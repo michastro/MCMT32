@@ -1,4 +1,4 @@
-﻿unit mscorlib_TLB;
+unit mscorlib_TLB;
 
 // ************************************************************************ //
 // AVERTISSEMENT
@@ -12,7 +12,7 @@
 // ************************************************************************ //
 
 // $Rev: 98336 $
-// Fichier généré le 04/04/2024 16:45:06 depuis la bibliothèque de types ci-dessous.
+// Fichier généré le 07/04/2024 18:20:04 depuis la bibliothèque de types ci-dessous.
 
 // ************************************************************************  //
 // Biblio. types : C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.tlb (1)
@@ -23,7 +23,7 @@
 // DepndLst : 
 //   (1) v2.0 stdole, (C:\Windows\SysWOW64\stdole2.tlb)
 // Bibliothèque de types parent :
-//   (0) v1.0 MCMT32_ASCOM, (D:\Astro\ASCOM\MCMT32New\MCMT32_ASCOM)
+//   (0) v1.0 MCMT32_ASCOM, (D:\Astro\ASCOM\MCMT32\MCMT32_ASCOM)
 // SYS_KIND: SYS_WIN32
 // Errors:
 //   Remarque : le symbole 'Object' a été renommé en 'CLRObject'
@@ -5529,7 +5529,7 @@ type
 // *********************************************************************//
   IEnumerable = interface(IDispatch)
     ['{496B0ABE-CDEE-11D3-88E8-00902754C43A}']
-    function GetEnumerator: IEnumerator; safecall;
+    function GetEnumerator: IEnumVARIANT; safecall;
   end;
 
 // *********************************************************************//
