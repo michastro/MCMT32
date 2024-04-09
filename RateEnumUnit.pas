@@ -8,7 +8,7 @@ uses
   ComObj, ActiveX, MCMT32_ASCOM_TLB, mscorlib_TLB, StdVcl,Utils,Core,SysUtils,Dialogs,Rate_Unit;
 
 type
-  TRateEnum = class(TAutoObject, IEnumerator)
+  TRateEnum = class(TAutoObject, IDispatch,IEnumerator)
   protected
     function Get_Current: OleVariant; safecall;
     function MoveNext: WordBool; safecall;
@@ -68,7 +68,7 @@ begin
 //  LogEnterProc(procName);
 //  LogProc(procName,Format('Axe=%d',[fAxe]));
 //  WriteToTrace(Format('Reset enumerator Axe=%d',[fAxe]));
-  fIndex:=0;
+  fIndex:=-1;
 //  LogEndProc(procName);
 end;
 

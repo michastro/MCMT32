@@ -12,7 +12,7 @@ unit MCMT32_ASCOM_TLB;
 // ************************************************************************ //
 
 // $Rev: 98336 $
-// Fichier généré le 06/04/2024 02:03:19 depuis la bibliothèque de types ci-dessous.
+// Fichier généré le 07/04/2024 18:29:18 depuis la bibliothèque de types ci-dessous.
 
 // ************************************************************************  //
 // Biblio. types : D:\Astro\ASCOM\MCMT32\MCMT32_ASCOM (1)
@@ -425,35 +425,30 @@ type
 
 // *********************************************************************//
 // Interface :   IAxisRates
-// Indicateurs : (320) Dual OleAutomation
+// Indicateurs : (4416) Dual OleAutomation Dispatchable
 // GUID :        {1339E0E3-6FF7-4352-B6C4-1AEC52361915}
 // *********************************************************************//
-  IAxisRates = interface(IEnumVARIANT)
+  IAxisRates = interface(IDispatch)
     ['{1339E0E3-6FF7-4352-B6C4-1AEC52361915}']
-    function Get__NewEnum: IAxisRates; safecall;
     function Get_Count: Integer; safecall;
     function Get_Item(Index: Integer): IRate; safecall;
-    function GetEnumerator: IDispatch; safecall;
-    property _NewEnum: IAxisRates read Get__NewEnum;
+    function GetEnumerator: IEnumerator; safecall;
+    procedure Dispose; safecall;
     property Count: Integer read Get_Count;
     property Item[Index: Integer]: IRate read Get_Item; default;
   end;
 
 // *********************************************************************//
 // DispIntf :    IAxisRatesDisp
-// Indicateurs : (320) Dual OleAutomation
+// Indicateurs : (4416) Dual OleAutomation Dispatchable
 // GUID :        {1339E0E3-6FF7-4352-B6C4-1AEC52361915}
 // *********************************************************************//
   IAxisRatesDisp = dispinterface
     ['{1339E0E3-6FF7-4352-B6C4-1AEC52361915}']
-    property _NewEnum: IAxisRates readonly dispid -4;
     property Count: Integer readonly dispid 1;
     property Item[Index: Integer]: IRate readonly dispid 0; default;
-    function GetEnumerator: IDispatch; dispid 103;
-    function Next(celt: LongWord; const rgvar: OleVariant; out pceltFetched: LongWord): HResult; dispid 1610678272;
-    function Skip(celt: LongWord): HResult; dispid 1610678273;
-    function Reset: HResult; dispid 1610678274;
-    function Clone(out ppenum: IEnumVARIANT): HResult; dispid 1610678275;
+    function GetEnumerator: IEnumerator; dispid 103;
+    procedure Dispose; dispid 201;
   end;
 
 // *********************************************************************//
@@ -465,7 +460,10 @@ type
     ['{F116E1DA-7E3E-4207-BD17-1615DCE4BE41}']
     function Get_Count: Integer; safecall;
     function GetEnumerator: IEnumerator; safecall;
+    function Get_Item(index: Integer): DriveRates; safecall;
+    procedure Dispose; safecall;
     property Count: Integer read Get_Count;
+    property Item[index: Integer]: DriveRates read Get_Item;
   end;
 
 // *********************************************************************//
@@ -477,6 +475,8 @@ type
     ['{F116E1DA-7E3E-4207-BD17-1615DCE4BE41}']
     property Count: Integer readonly dispid 1;
     function GetEnumerator: IEnumerator; dispid 201;
+    property Item[index: Integer]: DriveRates readonly dispid 203;
+    procedure Dispose; dispid 202;
   end;
 
 // *********************************************************************//

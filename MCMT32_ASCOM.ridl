@@ -6,7 +6,7 @@
 // Toutefois, lors de l'application de changements via l'éditeur, ce fichier sera régénéré
 // et les commentaires et les changements de formatage seront perdus.
 // ************************************************************************ //
-// Fichier généré le 06/04/2024 02:03:27 (- $Rev: 12980 $, 19134078).
+// Fichier généré le 07/04/2024 18:52:58 (- $Rev: 12980 $, 9858312).
 
 [
   uuid(A5F49B3F-C4AC-4BBE-9415-837223494182),
@@ -323,16 +323,16 @@ library MCMT32_ASCOM
     dual,
     oleautomation
   ]
-  interface IAxisRates: IEnumVARIANT
+  interface IAxisRates: IDispatch
   {
-    [propget, id(0xFFFFFFFC)]
-    HRESULT _stdcall _NewEnum([out, retval] IAxisRates** Value);
     [propget, id(0x00000001)]
     HRESULT _stdcall Count([out, retval] long* Value);
     [propget, id(0x00000000), defaultcollelem]
     HRESULT _stdcall Item([in] long Index, [out, retval] IRate** Value);
     [id(0x00000067)]
-    HRESULT _stdcall GetEnumerator([out, retval]  IDispatch** Value);
+    HRESULT _stdcall GetEnumerator([out, retval] IEnumerator** Value);
+    [id(0x000000C9)]
+    HRESULT _stdcall Dispose(void);
   };
 
   [
@@ -347,6 +347,10 @@ library MCMT32_ASCOM
     HRESULT _stdcall Count([out, retval] long* Value);
     [id(0x000000C9)]
     HRESULT _stdcall GetEnumerator([out, retval] IEnumerator** Value);
+    [propget, id(0x000000CB)]
+    HRESULT _stdcall Item([in] long index, [out, retval] enum DriveRates Value);
+    [id(0x000000CA)]
+    HRESULT _stdcall Dispose(void);
   };
 
   [

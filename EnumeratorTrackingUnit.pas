@@ -13,7 +13,7 @@ type
     function Get_Current: OleVariant; safecall;
     function MoveNext: WordBool; safecall;
   public
-    fAxe,fCount,fIndex:integer;
+   fCount,fIndex:integer;
     procedure Reset; safecall;
     constructor CreateEnum;
   end;

@@ -14,6 +14,7 @@ type
       E:TEnumeratorTracking;
   protected
     function GetEnumerator: IEnumerator; safecall;
+    function Get_Item(index: Integer): DriveRates; safecall;
    public
     function Get_Count: Integer; safecall;
     procedure Dispose; safecall;
@@ -61,6 +62,15 @@ end;
 procedure TTrackingRates.Dispose;
 begin
 
+end;
+
+function TTrackingRates.Get_Item(index: Integer): DriveRates;
+begin
+    Case index of
+      0: result:=driveSidereal;
+      1: result:=driveLunar;
+      2: result:=driveKing;
+    End;
 end;
 
 initialization
